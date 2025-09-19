@@ -276,3 +276,227 @@
             border-radius: 6px;
             display: none;
         }
+
+        /* Auto-detect system dark or light mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #232946 0%, #1a1a2e 100%);
+        color: #f3f3f3;
+    }
+
+    .login-container {
+        background: #181824;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .login-container::before {
+        background: linear-gradient(90deg, #232946, #1a1a2e);
+    }
+
+    .logo h1 {
+        color: #f3f3f3;
+    }
+
+    .logo p {
+        color: #b0b3c6;
+    }
+
+    .form-group label {
+        color: #f3f3f3;
+    }
+
+    .form-group input {
+        background-color: #232946;
+        color: #f3f3f3;
+        border-color: #353866;
+    }
+
+    .form-group input:focus {
+        background-color: #181824;
+        border-color: #a3a8f0;
+        box-shadow: 0 4px 12px rgba(163, 168, 240, 0.15);
+    }
+
+    .form-group input::placeholder {
+        color: #b0b3c6;
+    }
+
+    .password-toggle {
+        color: #b0b3c6;
+    }
+
+    .password-toggle:hover {
+        color: #a3a8f0;
+    }
+
+    .forgot-password a {
+        color: #a3a8f0;
+    }
+
+    .forgot-password a:hover {
+        color: #f3f3f3;
+    }
+
+    .login-btn {
+        background: linear-gradient(135deg, #353866 0%, #232946 100%);
+        color: #fff;
+    }
+
+    .login-btn:hover {
+        box-shadow: 0 8px 25px rgba(163, 168, 240, 0.2);
+    }
+
+    .divider {
+        color: #b0b3c6;
+    }
+
+    .divider::before {
+        background: #353866;
+    }
+
+    .divider span {
+        background: #181824;
+    }
+
+    .social-btn {
+        background: #232946;
+        border-color: #353866;
+        color: #f3f3f3;
+    }
+
+    .social-btn:hover {
+        box-shadow: 0 4px 12px rgba(163, 168, 240, 0.1);
+    }
+
+    .google-btn {
+        color: #ff6f61;
+        border-color: #ff6f61;
+    }
+
+    .google-btn:hover {
+        background: #ff6f61;
+        color: #fff;
+    }
+
+    .microsoft-btn {
+        color: #42a5f5;
+        border-color: #42a5f5;
+    }
+
+    .microsoft-btn:hover {
+        background: #42a5f5;
+        color: #fff;
+    }
+
+    .signup-link {
+        color: #b0b3c6;
+    }
+
+    .signup-link a {
+        color: #a3a8f0;
+    }
+
+    .signup-link a:hover {
+        color: #f3f3f3;
+    }
+
+    .remember-me label {
+        color: #b0b3c6;
+    }
+
+    .error-message {
+        color: #ff6f61;
+    }
+
+    .success-message {
+        color: #28a745;
+        background: #22303c;
+        border: 1px solid #28a745;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px 0px #667eea;
+  }
+  50% {
+    box-shadow: 0 0 20px 4px #667eea88;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px #667eea;
+  }
+}
+
+/* Apply fade-in animation to container and logo */
+.login-container {
+  animation: fadeInUp 0.8s cubic-bezier(.23,1.01,.32,1) both;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.18), 0 1.5px 8px rgba(118, 75, 162, 0.10);
+  transition: box-shadow 0.3s cubic-bezier(.23,1.01,.32,1);
+}
+
+.login-container:hover {
+  box-shadow: 0 16px 48px rgba(102, 126, 234, 0.25), 0 3px 16px rgba(118, 75, 162, 0.18);
+}
+
+.logo {
+  animation: fadeInUp 1.2s 0.2s both;
+  filter: drop-shadow(0 2px 8px #667eea22);
+}
+
+/* Animate form fields */
+.form-group {
+  animation: fadeInUp 1s both;
+  animation-delay: 0.3s;
+  transition: box-shadow 0.3s cubic-bezier(.23,1.01,.32,1);
+}
+
+.form-group input:focus {
+  animation: glow 1.2s infinite;
+  box-shadow: 0 0 0 2px #667eea55, 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+/* Button shadow and hover animation */
+.login-btn {
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.10);
+  transition: box-shadow 0.3s cubic-bezier(.23,1.01,.32,1), transform 0.2s;
+}
+
+.login-btn:hover {
+  box-shadow: 0 6px 24px rgba(102, 126, 234, 0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Social buttons animation */
+.social-btn {
+  transition: box-shadow 0.3s, transform 0.2s;
+  box-shadow: 0 1px 4px rgba(102, 126, 234, 0.08);
+}
+
+.social-btn:hover {
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Divider animation */
+.divider {
+  animation: fadeInUp 1.2s 0.5s both;
+}
+
+/* Error and success message animation */
+.error-message,
+.success-message {
+  animation: fadeInUp 1s 0.6s both;
+  box-shadow: 0 2px 8px rgba(255, 111, 97, 0.10);
+}
